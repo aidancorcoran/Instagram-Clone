@@ -46,11 +46,13 @@ const followUser = async (req, res) => {
 
 // Unfollow another user
 const unfollowUser = async (req, res) => {
+    const userToUnFollow = await User.findById(req.body.followId);
+    console.log(userToUnFollow);
     try {
         const updatedUser = await User.findByIdAndUpdate(
             req.body.followId,
             {
-                $pull: {Followers: req.user._id},
+                $pull: {Followers: userToUnFollow._id},
             },
             {
                 new: true,
