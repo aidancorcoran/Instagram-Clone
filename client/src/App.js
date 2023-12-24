@@ -9,7 +9,6 @@ import Routing from "./routes/Routing";
  const App = () => {
  return (
    <div>
-     <BrowserRouter>
       <div className="pages">
         <Routes>
           <Route
@@ -18,7 +17,6 @@ import Routing from "./routes/Routing";
           />
         </Routes>
       </div>
-     </BrowserRouter>
    </div>
  );
 };
